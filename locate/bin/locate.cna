@@ -1,0 +1,20 @@
+alias locate {
+    $bid = $1;
+
+    $input  = substr($0, 7); # fuck you
+    @args   = split(' ', $input);
+    $path   = @args[0];
+    $type   = @args[1];
+    $match  = @args[2];
+    $level  = @args[3];
+
+	$handle = openf(script_resource("locate." . barch($bid) . ".o"));
+	$data   = readb($handle, -1);
+	closef($handle);
+
+	$args = bof_pack($bid, "zzzi", $path, $type, $match, $level);
+
+    btask($1, "searching for ' $+ $match $+ ' in  $+ $path $+ \\* (max recursion:  $+ $level $+ ) ");
+
+	beacon_inline_execute($bid, $data, "go", $args);
+}
