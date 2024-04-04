@@ -15,11 +15,11 @@
 }
 
 DECLSPEC_IMPORT char * __cdecl MSVCRT$strcpy(char * __restrict__ __dst, const char * __restrict__ __src);
-DECLSPEC_IMPORT int __cdecl MSVCRT$strcmp(const char *_Str1,const char *_Str2);
+DECLSPEC_IMPORT int    __cdecl MSVCRT$strcmp(const char *_Str1,const char *_Str2);
 DECLSPEC_IMPORT char * __cdecl MSVCRT$strcat(char * __restrict__ _Dest,const char * __restrict__ _Source);
-DECLSPEC_IMPORT char* __cdecl MSVCRT$strstr(const char* _Str, const char* _SubStr);
+DECLSPEC_IMPORT char*  __cdecl MSVCRT$strstr(const char* _Str, const char* _SubStr);
 
-WINBASEAPI HANDLE WINAPI KERNEL32$FindFirstFileA (char * lpFileName, LPWIN32_FIND_DATA lpFindFileData);
+WINBASEAPI HANDLE  WINAPI KERNEL32$FindFirstFileA (char * lpFileName, LPWIN32_FIND_DATA lpFindFileData);
 WINBASEAPI WINBOOL WINAPI KERNEL32$FindNextFileA (HANDLE hFindFile, LPWIN32_FIND_DATA lpFindFileData);
 WINBASEAPI WINBOOL WINAPI KERNEL32$FindClose (HANDLE hFindFile);
 
