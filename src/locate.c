@@ -7,10 +7,8 @@ void locate( char * path, char * type, char * match, int level, int max ) {
     HANDLE          hToken;
     TCHAR           searchPath[MAX_PATH];
 
-    /* do i need to worry of a buffer overflow here? */
     strcpy( searchPath, path );
     strcat( searchPath, "\\*" );
-    /* yeah probably, TODO: fix this */
 
     hToken = FindFirstFileA( searchPath, & currentToken );
     if ( hToken == INVALID_HANDLE_VALUE ) {
