@@ -14,7 +14,6 @@ void locate( char * path, char * type, char * match, int level, int max ) {
 
     hToken = FindFirstFileA( searchPath, & currentToken );
     if ( hToken == INVALID_HANDLE_VALUE ) {
-        Print( "unable to open directory %s", path );
         return;
     }
 
@@ -36,10 +35,7 @@ void locate( char * path, char * type, char * match, int level, int max ) {
 
             if ( level <= max ) {
                 locate( subDir, type, match, level + 1, max );
-            } else {
-                Print( "max recursion level reached, skipping %s", subDir );
             }
-
 
         } else {
             /*

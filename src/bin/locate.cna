@@ -1,5 +1,9 @@
 alias locate {
     $bid = $1;
+    if ( size(@_) < 5 ) {
+        btask($1, "usage: locate <path> <type> <match> <level>");
+        return;
+    }
 
     $input  = substr($0, 7); # fuck you
     @args   = split(' ', $input);
